@@ -6,7 +6,7 @@ const ARROW = `<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="
 
 const FONTS = `https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap`;
 
-const SITE = "https://aurelia.dental";
+const SITE = "https://the-real-webmaster.github.io/aurelia-dental";
 const OG_IMAGE = `${SITE}/assets/images/hero-clinic.jpg`;
 
 const SOCIAL_LINKS = `
@@ -18,10 +18,10 @@ function beforeAfterBlock(extraAttrs = "") {
   return `
       <div class="ba ba--premium" data-ba tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Сравнение до и после лечения"${extraAttrs}>
         <div class="ba__layer ba__layer--before">
-          <img src="assets/images/ba-case.jpg" alt="Улыбка до эстетического лечения винирами" width="1200" height="900" loading="lazy" decoding="async">
+          <img src="assets/images/result-before.jpg" alt="Улыбка до эстетического лечения" width="1200" height="900" loading="lazy" decoding="async">
         </div>
         <div class="ba__layer ba__after">
-          <img src="assets/images/ba-case.jpg" alt="Улыбка после эстетического лечения винирами" width="1200" height="900" loading="lazy" decoding="async">
+          <img src="assets/images/result-after.jpg" alt="Улыбка после эстетического лечения" width="1200" height="900" loading="lazy" decoding="async">
         </div>
         <div class="ba__handle" aria-hidden="true">
           <span class="ba__knob">
@@ -40,6 +40,7 @@ const SCRIPTS = `
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
 <script src="js/data.js" defer></script>
+<script src="js/demo-banner.js" defer></script>
 <script src="js/scroll-lock.js" defer></script>
 <script src="js/main.js" defer></script>
 <script src="js/navigation.js" defer></script>
@@ -184,6 +185,7 @@ function footer() {
       </div>
     </div>
     <div class="footer__bottom">
+      <p class="footer__demo">Демо-проект — пример сайта для стоматологии. <a href="https://github.com/the-real-webmaster" target="_blank" rel="noopener noreferrer">Связаться с автором</a></p>
       <p>© <span data-year></span> Aurelia Dental. Все права защищены.</p>
       <p><a href="privacy.html">Конфиденциальность</a> · <a href="terms.html">Условия</a></p>
     </div>
@@ -243,6 +245,7 @@ function wrap({ file, title, desc, canonical, active, overHero = false, jsonld, 
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="${FONTS}" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -264,9 +267,9 @@ const clinicSchema = {
   "@context": "https://schema.org",
   "@type": "Dentist",
   name: "Aurelia Dental",
-  url: "https://aurelia.dental/",
-  image: "https://aurelia.dental/assets/images/hero-clinic.jpg",
-  logo: "https://aurelia.dental/assets/icons/favicon.svg",
+  url: `${SITE}/`,
+  image: OG_IMAGE,
+  logo: `${SITE}/assets/icons/favicon.svg`,
   telephone: "+74950000000",
   email: "hello@aurelia-dental.ru",
   priceRange: "₽₽₽",
@@ -1259,7 +1262,7 @@ const loc = [
 ];
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${loc.map((u) => `  <url><loc>https://aurelia.dental/${u}</loc></url>`).join("\n")}
+${loc.map((u) => `  <url><loc>${SITE}/${u}</loc></url>`).join("\n")}
 </urlset>
 `);
 fs.writeFileSync(path.join(ROOT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);

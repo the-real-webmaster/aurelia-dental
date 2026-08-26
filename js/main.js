@@ -186,6 +186,10 @@
 
     });
 
+    const rect = ba.getBoundingClientRect();
+
+    setPos(rect.left + rect.width * 0.5);
+
   });
 
 

@@ -22,7 +22,7 @@
 
           <h2 id="booking-title" class="h2" style="margin:10px 0 8px">Записаться на приём</h2>
 
-          <p class="muted" style="margin-bottom:28px">Координатор подтвердит время по телефону. Онлайн-оплата здесь не производится.</p>
+          <p class="muted" style="margin-bottom:28px">Координатор подтвердит время по телефону. Демо: заявка не уходит на сервер.</p>
 
           <div class="field">
 
@@ -102,7 +102,8 @@
 
           <h3>Спасибо!</h3>
 
-          <p class="muted">Наш специалист свяжется с вами<br>в ближайшее время.</p>
+          <p class="muted">Спасибо! Мы свяжемся с вами<br>в ближайшее время.</p>
+          <p class="caption" style="margin-top:12px;opacity:.75">Демо: так выглядит подтверждение для пациента.</p>
 
           <button class="btn btn--primary" type="button" data-booking-success-close>Закрыть</button>
 
