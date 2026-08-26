@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+
+node_modules/
+.npm/
+
+*.log
+.env
+.env.*
+
+.cursor/
+.vscode/

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Галерея — Aurelia Dental</title>
+  <meta name="description" content="Фотографии клиники, команды, кабинетов и оборудования Aurelia Dental в Москве.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aurelia.dental/gallery.html">
+  <meta property="og:title" content="Галерея — Aurelia Dental">
+  <meta property="og:description" content="Фотографии клиники, команды, кабинетов и оборудования Aurelia Dental в Москве.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aurelia.dental/gallery.html">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Aurelia Dental">
+  <meta property="og:image" content="https://aurelia.dental/assets/images/hero-clinic.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Галерея — Aurelia Dental">
+  <meta name="twitter:description" content="Фотографии клиники, команды, кабинетов и оборудования Aurelia Dental в Москве.">
+  <meta name="twitter:image" content="https://aurelia.dental/assets/images/hero-clinic.jpg">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+</head>
+<body>
+
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="cursor" data-cursor aria-hidden="true"><span class="cursor__ring"></span><span class="cursor__dot"></span></div>
+<div class="preloader" data-preloader>
+  <div class="preloader__brand"><span>Aurelia</span><span>Dental</span></div>
+  <div class="preloader__bar"><span data-preloader-bar></span></div>
+</div>
+<header class="header is-solid" data-header>
+  <div class="header__inner">
+    <a class="logo" href="index.html" aria-label="Aurelia Dental — на главную">
+      <span class="logo__mark">A</span>
+      <span class="logo__text">Aurelia</span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация"><a href="services.html">Услуги</a><a href="doctors.html">Врачи</a><a href="clinic.html" class="is-active">Клиника</a><a href="prices.html">Цены</a><a href="journal.html">Журнал</a></nav>
+    <div class="header__actions">
+      <a class="header__phone" href="tel:+74950000000">+7 495 000-00-00</a>
+      <button class="btn btn--primary btn--sm" type="button" data-open-booking>Записаться <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.2"/></svg></button>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" data-mobile-nav aria-hidden="true" aria-label="Мобильное меню">
+  <div class="mobile-nav__header">
+    <a class="logo" href="index.html" aria-label="Aurelia Dental — на главную">
+      <span class="logo__mark">A</span>
+      <span class="logo__text">Aurelia</span>
+    </a>
+    <button class="mobile-nav__close" type="button" data-nav-close aria-label="Закрыть меню">✕</button>
+  </div>
+  <div class="mobile-nav__scroll">
+    <ul class="mobile-nav__list">
+      <li><a href="services.html">Услуги</a></li>
+      <li><a href="doctors.html">Врачи</a></li>
+      <li><a href="clinic.html">Клиника</a></li>
+      <li><a href="prices.html">Цены</a></li>
+      <li><a href="journal.html">Журнал</a></li>
+      <li><a href="about.html">О клинике</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+    <div class="mobile-nav__meta">
+      <div>
+        <p>Большая Никитская, 21</p>
+        <p>Москва</p>
+      </div>
+      <div class="mobile-nav__meta-row">
+        <a href="tel:+74950000000">+7 495 000-00-00</a>
+        <button class="btn btn--primary btn--sm" type="button" data-open-booking>Записаться</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<main id="main">
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumbs"><a href="index.html">Главная</a><span>/</span><span>Галерея</span></nav>
+    <p class="eyebrow">Галерея</p>
+    <h1>Тихие пространства. Рабочий свет.</h1>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="filters" data-gallery-filters>
+      <button type="button" class="is-active" data-filter="all">Все</button>
+      <button type="button" data-filter="clinic">Клиника</button>
+      <button type="button" data-filter="team">Команда</button>
+      <button type="button" data-filter="treatment">Лечение</button>
+      <button type="button" data-filter="tech">Технологии</button>
+      <button type="button" data-filter="details">Детали</button>
+    </div>
+    <div class="masonry">
+      
+      <a href="assets/images/clinic-reception.jpg" data-lightbox data-gallery-item data-cat="clinic" data-caption="Ресепшн"><img src="assets/images/clinic-reception.jpg" alt="Ресепшн" loading="lazy"></a>
+      <a href="assets/images/clinic-waiting.jpg" data-lightbox data-gallery-item data-cat="clinic" data-caption="Зона ожидания"><img src="assets/images/clinic-waiting.jpg" alt="Зона ожидания" loading="lazy"></a>
+      <a href="assets/images/clinic-treatment.jpg" data-lightbox data-gallery-item data-cat="treatment" data-caption="Лечебный кабинет"><img src="assets/images/clinic-treatment.jpg" alt="Лечебный кабинет" loading="lazy"></a>
+      <a href="assets/images/clinic-light.jpg" data-lightbox data-gallery-item data-cat="clinic" data-caption="Дневной свет"><img src="assets/images/clinic-light.jpg" alt="Дневной свет" loading="lazy"></a>
+      <a href="assets/images/clinic-architecture.jpg" data-lightbox data-gallery-item data-cat="clinic" data-caption="Архитектура"><img src="assets/images/clinic-architecture.jpg" alt="Архитектура" loading="lazy"></a>
+      <a href="assets/images/clinic-equipment.jpg" data-lightbox data-gallery-item data-cat="tech" data-caption="Оборудование"><img src="assets/images/clinic-equipment.jpg" alt="Оборудование" loading="lazy"></a>
+      <a href="assets/images/clinic-detail.jpg" data-lightbox data-gallery-item data-cat="details" data-caption="Деталь интерьера"><img src="assets/images/clinic-detail.jpg" alt="Деталь интерьера" loading="lazy"></a>
+      <a href="assets/images/clinic-corridor.jpg" data-lightbox data-gallery-item data-cat="clinic" data-caption="Коридор"><img src="assets/images/clinic-corridor.jpg" alt="Коридор" loading="lazy"></a>
+      <a href="assets/images/contact-space.jpg" data-lightbox data-gallery-item data-cat="clinic" data-caption="Входная зона"><img src="assets/images/contact-space.jpg" alt="Входная зона" loading="lazy"></a>
+      <a href="assets/images/hero-clinic.jpg" data-lightbox data-gallery-item data-cat="clinic" data-caption="Кабинет"><img src="assets/images/hero-clinic.jpg" alt="Кабинет" loading="lazy"></a>
+      <a href="assets/images/hero-detail.jpg" data-lightbox data-gallery-item data-cat="details" data-caption="Инструменты"><img src="assets/images/hero-detail.jpg" alt="Инструменты" loading="lazy"></a>
+      <a href="assets/images/doctor-volkov.jpg" data-lightbox data-gallery-item data-cat="team" data-caption="Александр Волков"><img src="assets/images/doctor-volkov.jpg" alt="Александр Волков" loading="lazy"></a>
+      <a href="assets/images/doctor-morozova.jpg" data-lightbox data-gallery-item data-cat="team" data-caption="Елена Морозова"><img src="assets/images/doctor-morozova.jpg" alt="Елена Морозова" loading="lazy"></a>
+      <a href="assets/images/doctor-sokolov.jpg" data-lightbox data-gallery-item data-cat="team" data-caption="Дмитрий Соколов"><img src="assets/images/doctor-sokolov.jpg" alt="Дмитрий Соколов" loading="lazy"></a>
+      <a href="assets/images/doctor-petrova.jpg" data-lightbox data-gallery-item data-cat="team" data-caption="Анна Петрова"><img src="assets/images/doctor-petrova.jpg" alt="Анна Петрова" loading="lazy"></a>
+      <a href="assets/images/doctor-orlov.jpg" data-lightbox data-gallery-item data-cat="team" data-caption="Михаил Орлов"><img src="assets/images/doctor-orlov.jpg" alt="Михаил Орлов" loading="lazy"></a>
+      <a href="assets/images/doctor-ivanova.jpg" data-lightbox data-gallery-item data-cat="team" data-caption="София Иванова"><img src="assets/images/doctor-ivanova.jpg" alt="София Иванова" loading="lazy"></a>
+      <a href="assets/images/service-veneers.jpg" data-lightbox data-gallery-item data-cat="treatment" data-caption="Эстетика"><img src="assets/images/service-veneers.jpg" alt="Эстетика" loading="lazy"></a>
+      <a href="assets/images/service-implants.jpg" data-lightbox data-gallery-item data-cat="treatment" data-caption="Имплантация"><img src="assets/images/service-implants.jpg" alt="Имплантация" loading="lazy"></a>
+      <a href="assets/images/service-whitening.jpg" data-lightbox data-gallery-item data-cat="treatment" data-caption="Отбеливание"><img src="assets/images/service-whitening.jpg" alt="Отбеливание" loading="lazy"></a>
+      <a href="assets/images/tech-scanner.jpg" data-lightbox data-gallery-item data-cat="tech" data-caption="Сканер"><img src="assets/images/tech-scanner.jpg" alt="Сканер" loading="lazy"></a>
+      <a href="assets/images/tech-surgery.jpg" data-lightbox data-gallery-item data-cat="tech" data-caption="Хирургический свет"><img src="assets/images/tech-surgery.jpg" alt="Хирургический свет" loading="lazy"></a>
+      <a href="assets/images/tech-room.jpg" data-lightbox data-gallery-item data-cat="tech" data-caption="Клинический интерьер"><img src="assets/images/tech-room.jpg" alt="Клинический интерьер" loading="lazy"></a>
+      <a href="assets/images/portrait-editorial.jpg" data-lightbox data-gallery-item data-cat="details" data-caption="Естественная улыбка"><img src="assets/images/portrait-editorial.jpg" alt="Естественная улыбка" loading="lazy"></a>
+      <a href="assets/images/consultation.jpg" data-lightbox data-gallery-item data-cat="treatment" data-caption="Консультация"><img src="assets/images/consultation.jpg" alt="Консультация" loading="lazy"></a>
+      <a href="assets/images/gallery-smile.jpg" data-lightbox data-gallery-item data-cat="treatment" data-caption="Результат лечения"><img src="assets/images/gallery-smile.jpg" alt="Результат лечения" loading="lazy"></a>
+      <a href="assets/images/journal-1.jpg" data-lightbox data-gallery-item data-cat="details" data-caption="Журнал"><img src="assets/images/journal-1.jpg" alt="Журнал" loading="lazy"></a>
+      <a href="assets/images/gallery-3.jpg" data-lightbox data-gallery-item data-cat="clinic" data-caption="Интерьер"><img src="assets/images/gallery-3.jpg" alt="Интерьер" loading="lazy"></a>
+      <a href="assets/images/gallery-4.jpg" data-lightbox data-gallery-item data-cat="details" data-caption="Свет фасада"><img src="assets/images/gallery-4.jpg" alt="Свет фасада" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="cta-final">
+  <div class="container" data-reveal>
+    <p class="eyebrow">Консультация</p>
+    <p class="display">Ваша улыбка заслуживает<br>продуманного плана.</p>
+    <button class="btn btn--light" type="button" data-open-booking>Записаться на консультацию <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.2"/></svg></button>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <p class="display">Aurelia Dental</p>
+        <p class="muted" style="margin-top:16px;max-width:28ch">Современная стоматология нового уровня. Частная клиника в центре Москвы.</p>
+      </div>
+      <nav aria-label="Подвал">
+        <p class="caption">Клиника</p>
+        <a href="services.html">Услуги</a>
+        <a href="doctors.html">Врачи</a>
+        <a href="clinic.html">Клиника</a>
+        <a href="prices.html">Цены</a>
+        <a href="journal.html">Журнал</a>
+        <a href="about.html">О клинике</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <address>
+        <p class="caption">Адрес</p>
+        <p>Большая Никитская, 21, стр. 2<br>Москва, 125009</p>
+        <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+        <a href="mailto:hello@aurelia-dental.ru">hello@aurelia-dental.ru</a>
+        <p>Пн–Сб 09:00–21:00</p>
+      </address>
+      <div class="social">
+        <p class="caption">Соцсети</p>
+        <a href="https://instagram.com/aureliadental" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://t.me/aureliadental" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://wa.me/74950000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span data-year></span> Aurelia Dental. Все права защищены.</p>
+      <p><a href="privacy.html">Конфиденциальность</a> · <a href="terms.html">Условия</a></p>
+    </div>
+  </div>
+</footer>
+<button class="back-top" type="button" data-back-top aria-label="Наверх">↑</button>
+<button class="mobile-cta btn btn--primary" type="button" data-open-booking>Записаться на консультацию</button>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/scroll-lock.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/navigation.js" defer></script>
+<script src="js/booking.js" defer></script>
+<script src="js/faq.js" defer></script>
+<script src="js/filters.js" defer></script>
+<script src="js/lightbox.js" defer></script>
+<script src="js/animations.js" defer></script>
+</body>
+</html>
