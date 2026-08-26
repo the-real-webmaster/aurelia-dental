@@ -24,19 +24,35 @@
 
   const back = document.querySelector("[data-back-top]");
 
+  let scrollTicking = false;
+
   const onScroll = () => {
 
-    const h = document.documentElement;
+    if (scrollTicking) return;
 
-    const max = h.scrollHeight - h.clientHeight;
+    scrollTicking = true;
 
-    if (progress && max > 0) progress.style.width = (h.scrollTop / max) * 100 + "%";
+    requestAnimationFrame(() => {
 
-    if (back) back.classList.toggle("is-visible", h.scrollTop > 600);
+      scrollTicking = false;
+
+      const lenis = window.__aureliaLenis;
+
+      const scrollTop = lenis ? lenis.scroll : document.documentElement.scrollTop;
+
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+
+      if (progress && max > 0) progress.style.width = (scrollTop / max) * 100 + "%";
+
+      if (back) back.classList.toggle("is-visible", scrollTop > 600);
+
+    });
 
   };
 
   window.addEventListener("scroll", onScroll, { passive: true });
+
+  document.addEventListener("aurelia:scroll", onScroll, { passive: true });
 
   onScroll();
 
@@ -218,9 +234,17 @@
 
       let mx = 0, my = 0, dx = 0, dy = 0, rx = 0, ry = 0;
 
-      window.addEventListener("mousemove", (e) => { mx = e.clientX; my = e.clientY; }, { passive: true });
+      let rafId = 0;
 
-      const loop = () => {
+      const tick = () => {
+
+        if (document.hidden) {
+
+          rafId = 0;
+
+          return;
+
+        }
 
         dx += (mx - dx) * 0.32;
 
@@ -234,11 +258,35 @@
 
         ring.style.transform = "translate(" + rx + "px," + ry + "px) translate(-50%, -50%)";
 
-        requestAnimationFrame(loop);
+        const settled = Math.abs(mx - dx) < 0.4 && Math.abs(my - dy) < 0.4
+
+          && Math.abs(mx - rx) < 0.4 && Math.abs(my - ry) < 0.4;
+
+        rafId = settled ? 0 : requestAnimationFrame(tick);
 
       };
 
-      loop();
+      window.addEventListener("mousemove", (e) => {
+
+        mx = e.clientX;
+
+        my = e.clientY;
+
+        if (!rafId) rafId = requestAnimationFrame(tick);
+
+      }, { passive: true });
+
+      document.addEventListener("visibilitychange", () => {
+
+        if (document.hidden && rafId) {
+
+          cancelAnimationFrame(rafId);
+
+          rafId = 0;
+
+        }
+
+      });
 
       document.addEventListener("mouseover", (e) => {
 

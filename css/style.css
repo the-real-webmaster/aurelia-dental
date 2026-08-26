@@ -476,8 +476,8 @@ h3,
 .header.is-solid {
   height: 68px;
   background: rgba(252, 251, 248, 0.88);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom-color: var(--line);
   box-shadow: 0 1px 0 rgba(34, 33, 31, 0.04);
 }

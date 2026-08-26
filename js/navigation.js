@@ -7,11 +7,19 @@
   const lock = window.AureliaScrollLock;
 
   if (header) {
+    let headerTicking = false;
     const onScroll = () => {
-      header.classList.toggle("is-scrolled", window.scrollY > 24);
+      if (headerTicking) return;
+      headerTicking = true;
+      requestAnimationFrame(() => {
+        headerTicking = false;
+        const scrollTop = window.__aureliaLenis ? window.__aureliaLenis.scroll : window.scrollY;
+        header.classList.toggle("is-scrolled", scrollTop > 24);
+      });
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("aurelia:scroll", onScroll, { passive: true });
   }
 
   const setMenu = (open) => {

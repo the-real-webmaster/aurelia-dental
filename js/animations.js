@@ -33,15 +33,24 @@
 
   const initLenis = () => {
     if (reduced || !desktop || typeof Lenis !== "function") return null;
-    const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+    const lenis = new Lenis({
+      lerp: 0.16,
+      smoothWheel: true,
+      syncTouch: false,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.4
+    });
     window.__aureliaLenis = lenis;
     if (window.gsap && window.ScrollTrigger) {
-      lenis.on("scroll", ScrollTrigger.update);
+      lenis.on("scroll", () => {
+        ScrollTrigger.update();
+        document.dispatchEvent(new CustomEvent("aurelia:scroll"));
+      });
       gsap.ticker.add((time) => lenis.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
     } else {
       const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
       requestAnimationFrame(raf);
+      lenis.on("scroll", () => document.dispatchEvent(new CustomEvent("aurelia:scroll")));
     }
     return lenis;
   };
@@ -64,7 +73,9 @@
         };
       }
     });
-    ScrollTrigger.addEventListener("refresh", () => lenis.resize());
+    ScrollTrigger.addEventListener("refresh", () => {
+      requestAnimationFrame(() => lenis.resize());
+    });
   };
 
   const initHscroll = () => {
@@ -86,10 +97,11 @@
           trigger: pin,
           start: "top top",
           end: () => "+=" + Math.max(getScroll(), window.innerHeight * 0.75),
-          scrub: 0.6,
+          scrub: 1,
           pin: true,
           anticipatePin: 1,
-          invalidateOnRefresh: true
+          invalidateOnRefresh: true,
+          fastScrollEnd: true
         }
       });
 
@@ -112,14 +124,17 @@
       revealContent();
       return;
     }
-    if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+    if (window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
+    }
 
     const hero = document.querySelector("[data-hero]");
     if (hero && !reduced) {
       const tl = gsap.timeline({ defaults: { ease: "power3.out", immediateRender: false } });
       tl.from(".header", { opacity: 0, y: -16, duration: 0.7 })
-        .from(".hero__media img", { scale: 1.16, duration: 1.4, ease: "power2.out" }, 0)
-        .fromTo(".hero__media", { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 1.15, ease: "power3.inOut" }, 0)
+        .from(".hero__media img", { scale: 1.08, duration: 1.1, ease: "power2.out" }, 0)
+        .fromTo(".hero__media", { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.95, ease: "power3.inOut" }, 0)
         .from("[data-hero-copy] > *", { y: 36, opacity: 0, duration: 0.85, stagger: 0.08 }, 0.35)
         .from(".hero__aside > *", { y: 24, opacity: 0, duration: 0.7, stagger: 0.08 }, 0.55);
     }
@@ -129,15 +144,19 @@
       return;
     }
 
-    gsap.utils.toArray("[data-reveal]").forEach((el) => {
-      gsap.from(el, {
-        opacity: 0,
-        y: 56,
-        duration: 0.9,
-        ease: "power3.out",
-        immediateRender: false,
-        scrollTrigger: { trigger: el, start: "top 92%", once: true }
-      });
+    ScrollTrigger.batch("[data-reveal]", {
+      start: "top 92%",
+      once: true,
+      onEnter: (batch) => {
+        gsap.from(batch, {
+          opacity: 0,
+          y: 48,
+          duration: 0.8,
+          ease: "power3.out",
+          stagger: 0.05,
+          overwrite: true
+        });
+      }
     });
 
     gsap.utils.toArray("[data-reveal-stagger]").forEach((wrap) => {
@@ -153,19 +172,19 @@
     });
 
     gsap.utils.toArray(".reveal-img img").forEach((img) => {
-      gsap.fromTo(img, { scale: 1.12 }, {
+      gsap.fromTo(img, { scale: 1.06 }, {
         scale: 1,
-        duration: 1.3,
+        duration: 1.1,
         ease: "power2.out",
-        scrollTrigger: { trigger: img, start: "top 90%" }
+        scrollTrigger: { trigger: img, start: "top 90%", once: true }
       });
     });
 
     gsap.utils.toArray("[data-parallax]").forEach((img) => {
       gsap.to(img, {
-        yPercent: 8,
+        yPercent: 5,
         ease: "none",
-        scrollTrigger: { trigger: img.parentElement, start: "top bottom", end: "bottom top", scrub: true }
+        scrollTrigger: { trigger: img.parentElement, start: "top bottom", end: "bottom top", scrub: 0.8 }
       });
     });
 
@@ -215,8 +234,7 @@
     }
     initMotion();
     if (window.ScrollTrigger) {
-      ScrollTrigger.refresh(true);
-      window.setTimeout(() => ScrollTrigger.refresh(true), 120);
+      requestAnimationFrame(() => ScrollTrigger.refresh());
     }
   };
 
