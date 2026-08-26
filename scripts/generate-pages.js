@@ -76,7 +76,7 @@ function chrome(active, overHero) {
   <div class="header__inner">
     <a class="logo" href="index.html" aria-label="Aurelia Dental — на главную">
       <span class="logo__mark">A</span>
-      <span class="logo__text">Aurelia</span>
+      <span class="logo__text">urelia</span>
     </a>
     <nav class="nav" aria-label="Основная навигация">${navLinks(active)}</nav>
     <div class="header__actions">
@@ -95,7 +95,7 @@ function mobileNav() {
   <div class="mobile-nav__header">
     <a class="logo" href="index.html" aria-label="Aurelia Dental — на главную">
       <span class="logo__mark">A</span>
-      <span class="logo__text">Aurelia</span>
+      <span class="logo__text">urelia</span>
     </a>
     <button class="mobile-nav__close" type="button" data-nav-close aria-label="Закрыть меню">✕</button>
   </div>

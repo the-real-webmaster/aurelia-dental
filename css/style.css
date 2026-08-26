@@ -511,8 +511,9 @@ h3,
 .logo {
   display: flex;
   align-items: baseline;
-  gap: 10px;
+  gap: 8px;
   justify-self: start;
+  isolation: isolate;
 }
 
 .logo__mark {
@@ -520,6 +521,8 @@ h3,
   font-size: 1.55rem;
   line-height: 1;
   font-weight: 500;
+  position: relative;
+  z-index: 1;
 }
 
 .logo__text {
@@ -528,6 +531,14 @@ h3,
   text-transform: uppercase;
   font-weight: 600;
   padding-bottom: 2px;
+}
+
+.header--over-hero:not(.is-scrolled) .logo__mark {
+  text-shadow: 0 2px 18px rgba(26, 25, 23, 0.5);
+}
+
+.header--over-hero:not(.is-scrolled) .logo__text {
+  text-shadow: 0 1px 14px rgba(26, 25, 23, 0.4);
 }
 
 .header.is-scrolled .logo__text {
