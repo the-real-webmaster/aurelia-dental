@@ -75,8 +75,11 @@ function chrome(active, overHero) {
 <header class="header${overHero ? " header--over-hero" : " is-solid"}" data-header>
   <div class="header__inner">
     <a class="logo" href="index.html" aria-label="Aurelia Dental — на главную">
-      <span class="logo__mark">A</span>
-      <span class="logo__text">urelia</span>
+      <span class="logo__mark" aria-hidden="true">A</span>
+      <span class="logo__brand">
+        <span class="logo__name">urelia</span>
+        <span class="logo__sub">Dental</span>
+      </span>
     </a>
     <nav class="nav" aria-label="Основная навигация">${navLinks(active)}</nav>
     <div class="header__actions">
@@ -94,8 +97,11 @@ function mobileNav() {
 <nav class="mobile-nav" data-mobile-nav aria-hidden="true" aria-label="Мобильное меню">
   <div class="mobile-nav__header">
     <a class="logo" href="index.html" aria-label="Aurelia Dental — на главную">
-      <span class="logo__mark">A</span>
-      <span class="logo__text">urelia</span>
+      <span class="logo__mark" aria-hidden="true">A</span>
+      <span class="logo__brand">
+        <span class="logo__name">urelia</span>
+        <span class="logo__sub">Dental</span>
+      </span>
     </a>
     <button class="mobile-nav__close" type="button" data-nav-close aria-label="Закрыть меню">✕</button>
   </div>
@@ -292,7 +298,7 @@ pages.push(["index.html", wrap({
   </div>
   <div class="hero__content">
     <div data-hero-copy>
-      <p class="eyebrow">Aurelia Dental · Москва</p>
+      <p class="eyebrow">Частная клиника · Москва</p>
       <h1 class="hero__title display">Современная<br>стоматология<br>нового уровня</h1>
       <p class="lede" style="color:rgba(255,255,255,.88)">Продуманная стоматология вокруг вас — спокойные кабинеты, индивидуальные планы, естественный результат.</p>
       <div class="hero__actions">

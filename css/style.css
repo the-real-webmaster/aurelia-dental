@@ -482,6 +482,10 @@ h3,
   box-shadow: 0 1px 0 rgba(34, 33, 31, 0.04);
 }
 
+.header--over-hero:not(.is-scrolled) {
+  background: linear-gradient(180deg, rgba(26, 25, 23, 0.52) 0%, rgba(26, 25, 23, 0.18) 72%, rgba(26, 25, 23, 0) 100%);
+}
+
 .header--over-hero:not(.is-scrolled) .logo,
 .header--over-hero:not(.is-scrolled) .nav a,
 .header--over-hero:not(.is-scrolled) .header__phone,
@@ -509,40 +513,52 @@ h3,
 }
 
 .logo {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   justify-self: start;
-  isolation: isolate;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .logo__mark {
   font-family: var(--font-serif);
-  font-size: 1.55rem;
+  font-size: 1.65rem;
   line-height: 1;
   font-weight: 500;
-  position: relative;
-  z-index: 1;
+  flex-shrink: 0;
 }
 
-.logo__text {
+.logo__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1;
+}
+
+.logo__name {
   font-size: 0.72rem;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   font-weight: 600;
-  padding-bottom: 2px;
 }
 
-.header--over-hero:not(.is-scrolled) .logo__mark {
-  text-shadow: 0 2px 18px rgba(26, 25, 23, 0.5);
+.logo__sub {
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.82;
 }
 
-.header--over-hero:not(.is-scrolled) .logo__text {
-  text-shadow: 0 1px 14px rgba(26, 25, 23, 0.4);
+.header--over-hero:not(.is-scrolled) .logo__mark,
+.header--over-hero:not(.is-scrolled) .logo__name,
+.header--over-hero:not(.is-scrolled) .logo__sub {
+  text-shadow: 0 2px 16px rgba(26, 25, 23, 0.45);
 }
 
-.header.is-scrolled .logo__text {
-  letter-spacing: 0.26em;
+.header.is-scrolled .logo__name {
+  letter-spacing: 0.24em;
 }
 
 .nav {
@@ -655,9 +671,11 @@ h3,
   border-bottom: 1px solid var(--line);
 }
 
-.mobile-nav__header .logo__text {
+.mobile-nav__header .logo__name {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
 }
 
 .mobile-nav__close {
@@ -757,6 +775,8 @@ h3,
   align-items: end;
   overflow: hidden;
   background: var(--charcoal);
+  padding-top: var(--header-h);
+  box-sizing: border-box;
 }
 
 .hero__media {
@@ -788,6 +808,7 @@ h3,
   grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   align-items: end;
+  max-height: calc(100svh - var(--header-h) - 72px);
 }
 
 .hero__title {
