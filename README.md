@@ -1,150 +1,177 @@
+<div align="center">
+
 # Aurelia Dental
 
-**Премиальный сайт частной стоматологической клиники** — светлая editorial-эстетика, плавные анимации, полная адаптивность и SEO-готовность.
+### Премиальный сайт частной стоматологической клиники
+
+*Светлая editorial-эстетика · плавные анимации · полная адаптивность · SEO*
+
+<br>
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=111)
+
+<br>
 
 ![Главная страница Aurelia Dental](assets/images/hero-clinic.jpg)
 
----
+<br>
 
-## О проекте
+[О проекте](#-о-проекте) ·
+[Возможности](#-возможности) ·
+[Страницы](#-страницы) ·
+[Запуск](#-запуск) ·
+[Структура](#-структура)
 
-**Aurelia Dental** — коммерческий концепт сайта стоматологии в Москве. Проект демонстрирует современный подход к медицинскому веб-дизайну: спокойная палитра, продуманная типографика, реалистичный русскоязычный контент и тонкие интерактивные детали без перегруза.
-
-Сайт готов к демонстрации клиенту, публикации в портфолио и передаче frontend-команде.
-
----
-
-## Возможности
-
-| Раздел | Что реализовано |
-|--------|-----------------|
-| **Дизайн** | Светлый luxury UI, editorial-карточки, тёплая нейтральная палитра |
-| **Анимации** | GSAP ScrollTrigger, stagger-reveal, parallax, плавная прокрутка Lenis |
-| **Навигация** | Sticky header, мобильное меню, блокировка скролла, закрытие по ESC |
-| **Формы** | Модальное окно записи, валидация полей, экран успешной отправки |
-| **Интерактив** | Слайдер «до/после», lightbox галереи, FAQ-аккордеон |
-| **Врачи** | Карточки и динамические страницы профилей |
-| **SEO** | Meta-теги, Open Graph, Schema.org, sitemap, robots.txt |
-| **Доступность** | Skip-link, focus-visible, ARIA, reduced motion, клавиатурная навигация |
-| **Мобильная версия** | Touch-контролы, фиксированная CTA-кнопка, адаптация 360–430 px |
+</div>
 
 ---
 
-## Страницы
+## ✦ О проекте
 
-| Страница | Файл |
-|----------|------|
+**Aurelia Dental** — коммерческий концепт сайта стоматологии в Москве.
+
+Проект показывает, как может выглядеть современная медицинская клиника в сети: спокойная палитра, продуманная типографика, реалистичный русскоязычный контент и аккуратные интерактивные детали — без перегруза и «клинического» холода.
+
+> Подходит для демонстрации клиенту, портфолио и передачи frontend-команде.
+
+| | |
+|---|---|
+| **Тип** | Статический сайт, zero build |
+| **Язык** | Русский |
+| **Страниц** | 20+ |
+| **Анимации** | GSAP + Lenis |
+| **Адаптив** | 360 px — 1920 px |
+
+---
+
+## ✦ Возможности
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**Дизайн и UX**
+- Светлый luxury UI
+- Editorial-карточки
+- Тёплая нейтральная палитра
+- Кастомный курсор (desktop)
+- Фиксированная CTA на mobile
+
+**Интерактив**
+- Слайдер «до / после»
+- Lightbox-галерея
+- FAQ-аккордеон
+- Форма записи с валидацией
+
+</td>
+<td width="50%" valign="top">
+
+**Техническая часть**
+- GSAP ScrollTrigger
+- Плавная прокрутка Lenis
+- Sticky header + mobile menu
+- Блокировка скролла в модалках
+- Dynamic doctor / article pages
+
+**SEO и a11y**
+- Open Graph + Schema.org
+- `sitemap.xml` + `robots.txt`
+- Skip-link, ARIA, focus-visible
+- `prefers-reduced-motion`
+
+</td>
+</tr>
+</table>
+
+---
+
+## ✦ Страницы
+
+| Раздел | Файл |
+|:--|:--|
 | Главная | `index.html` |
 | Услуги | `services.html` |
-| Детали услуг | `service-veneers.html`, `service-implants.html`, `service-whitening.html`, `service-orthodontics.html`, `service-therapy.html` |
+| Виниры · Импланты · Отбеливание · Ортодонтия · Терапия | `service-*.html` |
 | Врачи | `doctors.html` |
 | Профиль врача | `doctor.html?id=volkov` |
-| Цены | `prices.html` |
-| Клиника | `clinic.html` |
-| О клинике | `about.html` |
-| Галерея | `gallery.html` |
-| Отзывы | `reviews.html` |
-| Журнал | `journal.html` |
-| Статья | `article.html?slug=veneers` |
+| Цены · Клиника · О нас | `prices.html`, `clinic.html`, `about.html` |
+| Галерея · Отзывы · Журнал | `gallery.html`, `reviews.html`, `journal.html` |
 | Контакты | `contacts.html` |
-| Конфиденциальность / Условия | `privacy.html`, `terms.html` |
-| 404 | `404.html` |
+| Privacy · Terms · 404 | `privacy.html`, `terms.html`, `404.html` |
 
 ---
 
-## Стек технологий
+## ✦ Дизайн-система
 
-- **HTML5** — семантическая разметка
-- **CSS3** — custom properties, Grid, Flexbox, responsive typography
-- **JavaScript** — vanilla IIFE-модули, без сборщика
-- **[GSAP 3.12](https://greensock.com/gsap/)** + ScrollTrigger
-- **[Lenis 1.1](https://github.com/darkroomengineering/lenis)** — плавная прокрутка на desktop
-- **Google Fonts** — Cormorant Garamond, Manrope
-- **JPEG / SVG** — curated-фотографии и иконки
-
----
-
-## Дизайн-система
-
-**Стиль:** light luxury · warm ivory · editorial medical
-
-| Токен | Значение |
-|-------|----------|
-| Фоны | тёплый белый, ivory, мягкий крем |
-| Текст | charcoal, глубокий графит |
-| Акцент | приглушённое шампанское золото |
-| Скругления | 2 px (минимальные) |
-| Границы | тонкие линии вместо тяжёлых теней |
-| Заголовки | крупный serif (Cormorant Garamond) |
-| Основной текст | Manrope |
+```
+Стиль     light luxury · warm ivory · editorial medical
+Фоны      тёплый белый, ivory, мягкий крем
+Текст     charcoal, глубокий графит
+Акцент    приглушённое шампанское золото
+Шрифты    Cormorant Garamond (заголовки) + Manrope (текст)
+```
 
 ---
 
-## Адаптивность
-
-Поддерживаемые breakpoints:
-
-`360px` · `375px` · `390px` · `414px` · `430px` · `768px` · `992px` · `1024px` · `1280px` · `1440px` · `1600px` · `1920px`
-
----
-
-## Запуск локально
+## ✦ Запуск
 
 Сборка не требуется — проект полностью статический.
 
 ```bash
-# Python
+# Вариант 1 — Python
 python -m http.server 8080
 
-# Node
+# Вариант 2 — Node
 npx serve .
 ```
 
-Откройте `http://localhost:8080`
+Откройте в браузере: **http://localhost:8080**
 
-### Загрузка изображений (если папка пуста)
+<details>
+<summary><strong>Дополнительные команды</strong></summary>
+
+<br>
 
 ```bash
+# Загрузить изображения (если папка assets/images/ пуста)
 node scripts/download-images.js
-```
 
-### Перегенерация HTML-страниц (опционально)
-
-```bash
+# Перегенерировать HTML-страницы
 node scripts/generate-pages.js
 ```
 
+</details>
+
 ---
 
-## Структура проекта
+## ✦ Структура
 
 ```
 aurelia-dental/
-├── index.html
-├── services.html, doctors.html, contacts.html …
+├── index.html                 # Главная
 ├── css/
-│   ├── style.css          # Дизайн-система и компоненты
-│   └── responsive.css     # Breakpoints и мобильная версия
+│   ├── style.css              # Дизайн-система
+│   └── responsive.css         # Адаптив
 ├── js/
-│   ├── main.js            # Курсор, before/after, счётчики
-│   ├── navigation.js      # Header и мобильное меню
-│   ├── booking.js         # Форма записи
-│   ├── scroll-lock.js     # Блокировка скролла
-│   ├── animations.js      # GSAP + Lenis
-│   ├── lightbox.js        # Галерея
-│   └── data.js            # Данные врачей и статей
-├── assets/
-│   ├── images/
-│   └── icons/
-├── scripts/
-│   ├── generate-pages.js
-│   └── download-images.js
+│   ├── animations.js          # GSAP + Lenis
+│   ├── booking.js             # Форма записи
+│   ├── navigation.js          # Меню
+│   └── main.js                # Интерактив
+├── assets/images/             # Фотографии
+├── scripts/                   # Генераторы
 ├── sitemap.xml
 └── robots.txt
 ```
 
 ---
 
-## Лицензия
+<div align="center">
 
-Концепт / portfolio project. Название бренда и материалы используются в демонстрационных целях.
+**Aurelia Dental** — portfolio / concept project
+
+Название бренда и материалы используются в демонстрационных целях.
+
+</div>
