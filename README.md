@@ -13,6 +13,8 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111)
 ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=111)
 
+[![Live Demo](https://img.shields.io/badge/Демо-GitHub_Pages-2ea44f?style=for-the-badge&logo=github)](https://the-real-webmaster.github.io/aurelia-dental/)
+
 <br>
 
 ![Главная страница Aurelia Dental](assets/images/hero-clinic.jpg)
@@ -129,6 +131,8 @@ npx serve .
 ```
 
 Откройте в браузере: **http://localhost:8080**
+
+**Онлайн-версия:** [the-real-webmaster.github.io/aurelia-dental](https://the-real-webmaster.github.io/aurelia-dental/)
 
 <details>
 <summary><strong>Дополнительные команды</strong></summary>
