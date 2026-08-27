@@ -30,12 +30,12 @@ htmlFiles.forEach((file) => {
   }
 
   n = n.replace(
-    /(<div class="ba__layer ba__layer--before">\s*<img src=")assets\/images\/ba-case\.jpg"/,
-    '$1assets/images/result-before.jpg"'
+    /(<div class="ba__layer ba__layer--before">\s*<img src=")assets\/images\/(?:ba-case|result-before)\.(?:jpg|webp)"/,
+    '$1assets/images/before-after-before.webp"'
   );
   n = n.replace(
-    /(<div class="ba__layer ba__after">\s*<img src=")assets\/images\/ba-case\.jpg"/,
-    '$1assets/images/result-after.jpg"'
+    /(<div class="ba__layer ba__after">\s*<img src=")assets\/images\/(?:ba-case|result-after|result-before)\.(?:jpg|webp)"/,
+    '$1assets/images/before-after-after.webp"'
   );
 
   if (n !== c) fs.writeFileSync(path.join(ROOT, file), n);
